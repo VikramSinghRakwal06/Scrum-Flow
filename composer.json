@@ -1,0 +1,17 @@
+{
+    "name": "vikram/taskflow-pro",
+    "autoload": {
+        "psr-4": {
+            "Vikram\\TaskflowPro\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "VikramSingh-vartagram",
+            "email": "vikram.singh@vartagram.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. SECURITY: Block access to system folders
+    # If someone tries to visit /config/db.php, they get a 403 Forbidden error
+    RewriteRule ^(config|templates|database|src)/ - [F,L]
+
+    # 2. ROUTING: Redirect everything to the public folder
+    # If user visits localhost/taskflow-pro/, send them to public/
+    RewriteRule ^$ public/ [L]
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

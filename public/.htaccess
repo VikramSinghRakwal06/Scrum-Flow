@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # 1. Disable Directory Listing
+    # Prevents people from seeing a list of your files if index.php is missing
+    Options -Indexes
+
+    # 2. Remove .php extension
+    # If a user requests "/login", the server silently serves "login.php"
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.*)$ $1.php [L]
+</IfModule>
